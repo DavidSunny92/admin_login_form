@@ -1,0 +1,31 @@
+<div class="container pt-3">
+
+    <form [formGroup]="loginForm" novalidate class="form-group" style="background-color: rgb(238, 229, 101);"
+        (submit)="onsignup()">
+        <div class="row">
+            <div class="offset-3 col-6 offset-3 form-group">
+                <label>User Name</label>
+                <input type="text" class="form-control" placeholder="Enter Your Name" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && x.email.errors }">
+                <div *ngIf="submitted && x.email.errors" class="invalid-feedback">
+                    <span *ngIf="x.email.errors.required" class="text-danger">Email is Required</span>
+                    <div *ngIf="x.email.errors.email">Email must be a valid email address</div>
+                </div>
+            </div>
+
+            <div class="offset-3 col-6 offset-3 form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Enter Your Name" formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && x.password.errors }">
+                <div *ngIf="submitted && x.password.errors" class="invalid-feedback">
+                    <span *ngIf="x.password.errors.required" class="text-danger">password is Required</span>
+                </div>
+            </div>
+            <div class="offset-3 col-6 offset-3 form-group">
+                <button type="submit" class="createbtn btn btn-primary form-control">LogIn</button>
+
+            </div>
+
+        </div>
+    </form>
+</div>

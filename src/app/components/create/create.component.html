@@ -1,0 +1,53 @@
+<nav class="container-fluid" style="color: rgb(209, 228, 235); background-color: rgb(12, 12, 11);">
+    <h3 style="text-align: center;">Create Employee</h3>
+</nav>
+<div class="container pt-3">
+
+
+    <div id="id">
+        <form [formGroup]="studentForm" novalidate class="form-group" style="background-color: rgb(238, 229, 101);"
+            (submit)="onreactivesubmit()">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Employee Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Name" formControlName="name"
+                        [ngClass]="{ 'is-invalid': submitted && x.name.errors }">
+                    <div *ngIf="submitted && x.name.errors" class="invalid-feedback">
+                        <span *ngIf="x.name.errors.required" class="text-danger">Name is Required</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label>Employee Salary</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Salary" formControlName="salary"
+                        [ngClass]="{ 'is-invalid': submitted && x.salary.errors }">
+                    <div *ngIf="submitted && x.salary.errors" class="invalid-feedback">
+                        <span *ngIf="x.salary.errors.required" class="text-danger">Salary is Required</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label>Employee Age</label>
+                    <input type="text" class="form-control" placeholder="Enter Your Age" formControlName="age"
+                        [ngClass]="{ 'is-invalid': submitted && x.age.errors }">
+                    <div *ngIf="submitted && x.age.errors" class="invalid-feedback">
+                        <span *ngIf="x.age.errors.required" class="text-danger">Age is Required</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <div>
+                <button type="submit" class="createbtn btn btn-primary form-control;btn">{{submitButton}}</button>
+            </div>
+            <div class="pt-1">
+                <button [routerLink]="['/employees']" class="btn btn-secondary form-control">
+                    <h4><b>Cancel</b></h4>
+                </button>
+            </div>
+       </form>
+    </div>
+
+</div>

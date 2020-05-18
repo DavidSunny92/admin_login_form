@@ -1,0 +1,31 @@
+<div class="container">
+    <table align="center">
+        <tr>
+            <td>
+                <div id="id">
+                    <form novalidate class="form-group" style="background-color: rgba(66, 65, 71, 0.788);">
+                        <div class="title">
+                            <h3><b>Employee Details</b></h3>
+                        </div>
+                        <div class=" col-lg-6 form-group">
+                            <label>Employee Name</label>
+                            <input type="text" readonly class="name" value="{{alldata.employee_name}}" />
+                        </div>
+                        <div class=" col-lg-6 form-group pt-2">
+                            <label>Salary</label>
+                            <input type="text" readonly class="name" value="{{alldata.employee_salary}}" />
+                        </div>
+                        <div class=" col-lg-6 form-group pt-2">
+                            <label>Age</label>
+                            <input type="text" readonly class="name" value="{{alldata.employee_age}}" />
+                        </div>
+                        <div class="pt-3">
+                            <button type="submit" [routerLink]="['/employees']"
+                                class="signupbtn btn btn-primary form-control ">Back To Employee
+                                List</button>
+                        </div>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    </table>

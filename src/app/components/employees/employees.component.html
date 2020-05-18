@@ -1,0 +1,41 @@
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-md-9">
+            <h5><b>Employee List</b></h5>
+        </div>
+
+        <div class="col-md-3 createbtn">
+            <button class="btn btn-small btn-info" (click)="onCreate()">Add New Employee</button>
+        </div>
+    </div>
+</div>
+<button *ngIf="deleteAllbtn" (click)="deletMany()">Delte Many</button>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col">ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Employee Salary</th>
+            <th scope="col">Employee Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="employessLength > 0">
+        <tr *ngFor="let employee of employees">
+
+            <td><input type="checkbox" [(ngModel)]="employee.isChecked" (change)="checkbox()"></td>
+            <td>{{employee.id}}</td>
+            <td>{{employee.employee_name}}</td>
+            <td>{{employee.employee_salary}}</td>
+            <td>{{employee.employee_age}}</td>
+            <td class="btn">
+                <button class="btn btn-small btn-info" [routerLink]="['/employee-lazy-load/view/',employee.id]">View
+                    Detils</button>
+                <span> <button class="btn btn-small btn-info"
+                        [routerLink]="['/employees/',employee.id]">Edit</button></span>
+                <button class="btn btn-small btn-danger " (click)="deleteEmploye(employee.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
