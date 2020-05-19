@@ -1,6 +1,29 @@
-.btn{
-    border-radius: 50px;
+.btn-detail{
+    background-color: lightgreen;
+    margin-right: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600px;
       }
-    .createbtn{
-        margin-bottom: 20px;
-    }
+      .btn-info{
+        margin-right: 6px;
+        font-size: 16px;
+    font-weight: 600px;
+      }
+
+      .btn-danger{
+        font-size: 16px;
+    font-weight: 600px;
+      }
+   .tbl-checkbox{
+     margin-top: 9px;
+     height: 20px;
+     width: 20px;
+   }
+   .emp-table{
+    margin-top: 3%;
+    border: 1px solid gray;
+   }
+   thead{
+     color: #614a4af2;
+   }

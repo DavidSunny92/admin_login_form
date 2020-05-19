@@ -1,15 +1,8 @@
-<nav class="container-fluid" style="color: rgb(209, 228, 235); background-color: rgb(12, 12, 11);">
-    <h3 style="text-align: center;">Create Employee</h3>
-</nav>
-<div class="container pt-3">
-
-
-    <div id="id">
-        <form [formGroup]="studentForm" novalidate class="form-group" style="background-color: rgb(238, 229, 101);"
-            (submit)="onreactivesubmit()">
-
+<div class="container pt-5">
+    <div id="id" class="offset-3">
+        <form [formGroup]="studentForm" novalidate class="form-group" (submit)="onreactivesubmit()">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <label>Employee Name</label>
                     <input type="text" class="form-control" placeholder="Enter Your Name" formControlName="name"
                         [ngClass]="{ 'is-invalid': submitted && x.name.errors }">
@@ -19,7 +12,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-md-4">
                     <label>Employee Salary</label>
                     <input type="text" class="form-control" placeholder="Enter Your Salary" formControlName="salary"
                         [ngClass]="{ 'is-invalid': submitted && x.salary.errors }">
@@ -27,7 +20,7 @@
                         <span *ngIf="x.salary.errors.required" class="text-danger">Salary is Required</span>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-md-4">
                     <label>Employee Age</label>
                     <input type="text" class="form-control" placeholder="Enter Your Age" formControlName="age"
                         [ngClass]="{ 'is-invalid': submitted && x.age.errors }">
@@ -36,18 +29,20 @@
                     </div>
                 </div>
             </div>
-
-
             <br>
-            <div>
-                <button type="submit" class="createbtn btn btn-primary form-control;btn">{{submitButton}}</button>
+            <div class="row">
+                <div class="col-md-8">
+                    <div>
+                        <button type="submit"
+                            class="createbtn btn btn-primary form-control;btn">{{submitButton}}</button>
+                    </div>
+                    <div class="pt-1">
+                        <button [routerLink]="['/employees']" class="btn btn-secondary form-control">
+                            <h4><b>Cancel</b></h4>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="pt-1">
-                <button [routerLink]="['/employees']" class="btn btn-secondary form-control">
-                    <h4><b>Cancel</b></h4>
-                </button>
-            </div>
-       </form>
+        </form>
     </div>
-
 </div>

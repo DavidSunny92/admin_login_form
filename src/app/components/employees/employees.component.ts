@@ -24,16 +24,12 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit() {
     this.getEmp()
-
-
   }
 
   getEmp() {
     this.employessLength = 0;
     this.dataser.getEmpDetails().subscribe(res => {
-      
       this.employees = res.data;
-
       this.employees = Object.keys(this.employees).map(key => (this.employees[key]));
       this.employees.map(function (el) {
         var o = Object.assign({}, el);
@@ -41,7 +37,7 @@ export class EmployeesComponent implements OnInit {
         return o;
       })
       this.employessLength = this.employees.length;
-    
+
     })
   }
 
@@ -74,7 +70,7 @@ export class EmployeesComponent implements OnInit {
     })
   }
   deletMany() {
-   
+
     this.employees.map((e) => {
       if (e.isChecked) {
         this.dataser.deleteEmp(e.id).subscribe(res => {

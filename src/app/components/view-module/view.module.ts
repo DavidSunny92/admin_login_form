@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ViewemployeeComponent } from '../viewemployee/viewemployee.component';
+import { ViewemployeeComponent } from './viewemployee/viewemployee.component';
 import { RouterModule, Routes } from '@angular/router';
-import { EmpViewComponent } from './emp-view/emp-view.component';
+
 
 
 
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
 ];
 @NgModule({
-  declarations: [ViewemployeeComponent, EmpViewComponent],
+  declarations: [ViewemployeeComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class ViewModule { }

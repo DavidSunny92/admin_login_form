@@ -1,0 +1,41 @@
+.loginbg{
+    margin: 0;
+    padding: 0;
+    background-image: url("../../../../assets/images.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 115%;
+    height: 590px;
+    font-size: 25px;
+    font-style: initial;
+    font-weight: initial;  
+}
+
+.login{
+    box-sizing: border-box;
+     border: 1px solid #fff;
+     width: 600px;
+     padding: 20px;
+     align-content: center;
+     bottom: 20px;
+}
+.login-icon{
+     text-align: center;
+}
+.password{
+    color: #fff;
+}
+.username{
+    color: #fff;
+}
+
+.loginbox{
+    width: 100%;
+    height: 250px;
+     top: 40%;
+    left:60% ;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    
+}
+

@@ -19,7 +19,7 @@ export class LoginformComponent implements OnInit {
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(8)]]
     })
   }
   get x() { return this.loginForm.controls; }
@@ -39,16 +39,21 @@ export class LoginformComponent implements OnInit {
     }
     else {
       if (this.loginForm.value.email.toLowerCase() != 'admin@gmail.com' && this.loginForm.value.password.toLowerCase() != 'admin123') {
-        this.toastr.errorToastr('User Name & Password are wrong', 'Fail!');
+        this.toastr.errorToastr('User Name or Password is incorrect', 'Fail!');
       } else if (this.loginForm.value.email.toLowerCase() != 'admin@gmail.com') {
         this.toastr.errorToastr('User Name is wrong', 'Fail!');
       } else if (this.loginForm.value.password.toLowerCase() != 'admin123') {
         this.toastr.errorToastr(' Password is wrong', 'Fail!');
       }
+
+      this.loginForm.reset();
     }
 
 
+
+
   }
+
 
 
 }

@@ -1,0 +1,28 @@
+<div class="container; loginbg">
+    <form [formGroup]="loginForm" novalidate class="form-group" class="loginbox" (submit)="onsignup()">
+        <div class="row; offset-2  form-group login">
+            <div class="offset-2 col-8  form-group">
+                <div class="login-icon">
+                    <i class="fa fa-user-circle" style="font-size:36px"></i>
+                </div>
+                <label class="username">User Name</label>
+                <input type="text" class="form-control" placeholder="Enter Your Name" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && x.email.errors }">
+                <div *ngIf="submitted && x.email.errors" class="invalid-feedback">
+                    <span *ngIf="x.email.errors.required" class="text-danger">Email is Required</span>
+                    <div *ngIf="x.email.errors.email">Email must be a valid email address</div>
+                </div>
+                <label class="password">Password</label>
+                <input min="8" max="8" type="password" class="form-control" placeholder="Enter Your Password"
+                    formControlName="password" [ngClass]="{ 'is-invalid': submitted && x.password.errors }">
+                <div *ngIf="submitted && x.password.errors" class="invalid-feedback">
+                    <span *ngIf="x.password.errors.required" class="text-danger">password is Required</span>
+                    <span *ngIf="x.password.errors.minlength" class="text-danger">Password must be 8 characters</span>
+                </div>
+                <div class="pt-2">
+                    <button type="submit" class="createbtn btn btn-primary form-control">LogIn</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

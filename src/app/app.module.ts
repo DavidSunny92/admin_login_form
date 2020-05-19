@@ -2,20 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginformComponent } from './components/loginform/loginform.component';
-import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { LoginformComponent } from './components/page-components/loginform/loginform.component';
+import { PagenotfoundComponent } from './components/page-components/pagenotfound/pagenotfound.component';
 import { HomeComponent } from './components/home/home.component';
 import { EmployeesComponent } from './components/employees/employees.component';
-import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LogoutComponent } from './components/logout/logout.component';
-import { WrongdetailsComponent } from './components/wrongdetails/wrongdetails.component';
+import { HeaderComponent } from './components/page-components/header/header.component';
 import { DataService } from './services/data.service';
-import { CreateComponent } from './components/create/create.component';
-import { UpdateemployeeComponent } from './components/updateemployee/updateemployee.component';
+import { CreateComponent } from './components/page-components/create/create.component';
+import { UpdateemployeeComponent } from './components/page-components/updateemployee/updateemployee.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ng6-toastr-notifications';
 
@@ -27,11 +23,8 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     HomeComponent,
     EmployeesComponent,
     HeaderComponent,
-    FooterComponent,
-    LogoutComponent,
-    WrongdetailsComponent,
-    CreateComponent,
-    UpdateemployeeComponent,
+     CreateComponent,
+    UpdateemployeeComponent
 
   ],
   imports: [
@@ -44,7 +37,7 @@ import { ToastrModule } from 'ng6-toastr-notifications';
     ToastrModule.forRoot(),
 
   ],
-  providers: [UserService, DataService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
